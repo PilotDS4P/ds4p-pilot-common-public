@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="UserProfile">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="userId"/>
+                <xs:element ref="providerId"/>
+                <xs:element ref="organization"/>
+                <xs:element ref="organizationUnit"/>
+                <xs:element ref="city"/>
+                <xs:element ref="state"/>
+                <xs:element ref="country"/>
+                <xs:element ref="providerHomeCommunityId"/>
+                <xs:element ref="purposeOfUse"/>
+                <xs:element ref="role"/>
+                <xs:element ref="allowedSensitivityActions"/>
+                <xs:element ref="confidentialityCredentials"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="userId" type="xs:string"/>
+    <xs:element name="providerId" type="xs:string"/>
+    <xs:element name="organization" type="xs:string"/>
+    <xs:element name="organizationUnit" type="xs:string"/>
+    <xs:element name="state" type="xs:string"/>
+    <xs:element name="city" type="xs:string"/>
+    <xs:element name="country" type="xs:string"/>
+    <xs:element name="providerHomeCommunityId" type="xs:string"/>
+    <xs:element name="purposeOfUse" type="xs:string"/>
+    <xs:element name="sensitivityCode" type="xs:string"/>
+    <xs:element name="allowedSensitivityActions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="sensitivityCode"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="role" type="xs:string"/>
+    <xs:element name="confidentialityCredentials" nillable="false" type="xs:string"/>
+</xs:schema>
